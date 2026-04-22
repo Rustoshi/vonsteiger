@@ -42,7 +42,7 @@ const SiteSettingsSchema = new Schema<ISiteSettings>(
 );
 
 export const DEFAULT_SETTINGS = {
-  generalEmail: "contact@vonsteiger.law",
+  generalEmail: "info@vonsteiger.org",
   generalPhone: "+49 (40) 123 456 789",
   offices: [
     {
@@ -52,7 +52,7 @@ export const DEFAULT_SETTINGS = {
       postal: "20354",
       country: "DE",
       phone: "+49 (40) 123 456 789",
-      email: "hamburg@vonsteiger.law",
+      email: "hamburg@vonsteiger.org",
       hours: "Mon–Fri: 08:00–18:00 CET",
     },
     {
@@ -62,7 +62,7 @@ export const DEFAULT_SETTINGS = {
       postal: "10117",
       country: "DE",
       phone: "+49 (30) 987 654 321",
-      email: "berlin@vonsteiger.law",
+      email: "berlin@vonsteiger.org",
       hours: "Mon–Fri: 08:00–18:00 CET",
     },
   ],
