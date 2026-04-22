@@ -69,10 +69,10 @@ export default function ContactPageClient() {
                   <li className="flex items-center gap-3">
                     <Mail className="w-4 h-4 text-gold shrink-0" />
                     <a
-                      href="mailto:hamburg@vonsteiger.law"
+                      href="mailto:hamburg@vonsteiger.org"
                       className="text-white/70 text-sm hover:text-gold transition-colors"
                     >
-                      hamburg@vonsteiger.law
+                      hamburg@vonsteiger.org
                     </a>
                   </li>
                   <li className="flex items-center gap-3">
@@ -107,10 +107,10 @@ export default function ContactPageClient() {
                   <li className="flex items-center gap-3">
                     <Mail className="w-4 h-4 text-gold shrink-0" />
                     <a
-                      href="mailto:berlin@vonsteiger.law"
+                      href="mailto:berlin@vonsteiger.org"
                       className="text-white/70 text-sm hover:text-gold transition-colors"
                     >
-                      berlin@vonsteiger.law
+                      berlin@vonsteiger.org
                     </a>
                   </li>
                   <li className="flex items-center gap-3">
@@ -130,10 +130,10 @@ export default function ContactPageClient() {
                   <li className="flex items-center gap-3">
                     <Mail className="w-4 h-4 text-gold shrink-0" />
                     <a
-                      href="mailto:contact@vonsteiger.law"
+                      href="mailto:info@vonsteiger.org"
                       className="text-white/70 text-sm hover:text-gold transition-colors"
                     >
-                      contact@vonsteiger.law
+                      info@vonsteiger.org
                     </a>
                   </li>
                   <li className="flex items-center gap-3">

@@ -135,10 +135,10 @@ export default function Footer() {
               <li className="flex items-center gap-3">
                 <Mail className="w-4 h-4 text-gold shrink-0" />
                 <a
-                  href="mailto:contact@vonsteiger.law"
+                  href="mailto:info@vonsteiger.org"
                   className="text-white/60 text-sm hover:text-gold transition-colors"
                 >
-                  contact@vonsteiger.law
+                  info@vonsteiger.org
                 </a>
               </li>
             </ul>
