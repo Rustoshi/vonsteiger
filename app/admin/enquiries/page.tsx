@@ -72,33 +72,46 @@ export default function EnquiriesPage() {
   }, [fetchEnquiries]);
 
   async function updateStatus(id: string, status: string) {
-    await fetch(`/api/admin/enquiries/${id}`, {
-      method: "PATCH",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ status }),
-    });
-    if (selected && selected._id === id) {
-      setSelected({ ...selected, status });
+    try {
+      await fetch(`/api/admin/enquiries/${id}`, {
+        method: "PATCH",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ status }),
+      });
+      if (selected && selected._id === id) {
+        setSelected({ ...selected, status });
+      }
+      fetchEnquiries(pagination.page);
+    } catch {
+      /* fail gracefully */
     }
-    fetchEnquiries(pagination.page);
   }
 
   async function saveNotes(id: string) {
     setSaving(true);
-    await fetch(`/api/admin/enquiries/${id}`, {
-      method: "PATCH",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ notes }),
-    });
-    if (selected) setSelected({ ...selected, notes });
-    setSaving(false);
+    try {
+      await fetch(`/api/admin/enquiries/${id}`, {
+        method: "PATCH",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ notes }),
+      });
+      if (selected) setSelected({ ...selected, notes });
+    } catch {
+      /* fail gracefully */
+    } finally {
+      setSaving(false);
+    }
   }
 
   async function deleteEnquiry(id: string) {
     if (!confirm("Are you sure you want to delete this enquiry?")) return;
-    await fetch(`/api/admin/enquiries/${id}`, { method: "DELETE" });
-    setSelected(null);
-    fetchEnquiries(pagination.page);
+    try {
+      await fetch(`/api/admin/enquiries/${id}`, { method: "DELETE" });
+      setSelected(null);
+      fetchEnquiries(pagination.page);
+    } catch {
+      /* fail gracefully */
+    }
   }
 
   function openDetail(e: Enquiry) {
