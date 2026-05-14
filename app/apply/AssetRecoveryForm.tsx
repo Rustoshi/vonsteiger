@@ -73,6 +73,11 @@ export default function AssetRecoveryForm() {
         if (!fieldErrors[key]) fieldErrors[key] = issue.message;
       }
       setErrors(fieldErrors);
+      const firstKey = result.error.issues[0]?.path[0] as string | undefined;
+      if (firstKey) {
+        const el = document.getElementById(firstKey);
+        if (el) el.scrollIntoView({ behavior: "smooth", block: "center" });
+      }
       return;
     }
 
@@ -328,7 +333,7 @@ export default function AssetRecoveryForm() {
           Additional Information
         </h3>
         <div className="space-y-6">
-          <div className="space-y-2">
+          <div id="previousCounsel" className="space-y-2">
             <Label className="text-white/80">
               Have you previously engaged legal counsel for this matter?{" "}
               <span className="text-gold">*</span>
@@ -428,7 +433,7 @@ export default function AssetRecoveryForm() {
             </div>
           </div>
 
-          <div className="space-y-2">
+          <div id="preferredContact" className="space-y-2">
             <Label className="text-white/80">
               Preferred Contact Method <span className="text-gold">*</span>
             </Label>

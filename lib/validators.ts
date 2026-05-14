@@ -37,7 +37,7 @@ export const assetRecoveryFormSchema = z
       .min(2, "Please enter your country of residence"),
     assetDescription: z
       .string()
-      .min(20, "Please provide at least 20 characters describing the assets")
+      .min(1, "Please describe the assets and circumstances")
       .max(5000, "Description must be less than 5000 characters"),
     estimatedValue: z.enum(
       [
